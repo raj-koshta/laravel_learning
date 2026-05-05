@@ -1,0 +1,2 @@
+<h3>My name is: {{$name}}</h3>
+<h3>My age is: {{ $age }}</h3>

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 
@@ -26,3 +27,5 @@ Route::get('/user/{name}', [UserController::class, 'user']);
 
 // Calling nested view folder and Passign dynamic value to controller using route
 Route::get('/user/{name}/{age}', [UserController::class, 'user_data']);
+
+Route::get('/home', [HomeController::class, 'index' ]);

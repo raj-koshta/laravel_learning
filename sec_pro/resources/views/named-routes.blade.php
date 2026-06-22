@@ -1,0 +1,3 @@
+<div>
+    Named Route
+</div>

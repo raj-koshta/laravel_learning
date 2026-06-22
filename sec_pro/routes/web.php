@@ -8,6 +8,9 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::view('home', 'home');
+Route::view('home/{name}', 'home');
+
 Route::view('user-form', 'user-form');
 Route::post('add-user', [UserController::class, 'addUser']);
 

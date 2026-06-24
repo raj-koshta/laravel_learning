@@ -44,3 +44,18 @@ Route::controller(StudentController::class)->group(function(){
 Route::controller(StudentController::class)->group(function(){
     Route::get('about/{name}','about');
 });
+
+// +++++++++++++++++ Global ModdleWare ++++++++++++++++++++
+Route::view('/home', 'home');
+
+
+// +++++++++++++++++ Group ModdleWare ++++++++++++++++++++
+Route::view('/home', 'home')->middleware('check1');
+
+// ++++++++++++++ Apply on multiple routes +++++
+Route::middleware('check1')->group(function (){
+    Route::view('/about', 'about');
+    Route::view('/list', 'about');
+    Route::view('/contact', 'about');
+    Route::view('/home', 'home');
+});

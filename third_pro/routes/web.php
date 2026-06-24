@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Middleware\AgeCheck;
+use App\Http\Middleware\CountryCheck;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\StudentController;
@@ -47,15 +49,20 @@ Route::controller(StudentController::class)->group(function(){
 
 // +++++++++++++++++ Global ModdleWare ++++++++++++++++++++
 Route::view('/home', 'home');
+Route::view('/about', 'about');
 
 
 // +++++++++++++++++ Group ModdleWare ++++++++++++++++++++
-Route::view('/home', 'home')->middleware('check1');
+// Route::view('/home', 'home')->middleware('check1');
 
 // ++++++++++++++ Apply on multiple routes +++++
-Route::middleware('check1')->group(function (){
-    Route::view('/about', 'about');
-    Route::view('/list', 'about');
-    Route::view('/contact', 'about');
-    Route::view('/home', 'home');
-});
+// Route::middleware('check1')->group(function (){
+//     Route::view('/about', 'about');
+//     Route::view('/list', 'about');
+//     Route::view('/contact', 'about');
+//     Route::view('/home', 'home');
+// });
+
+// ++++++++++++++++++ Assigning middleware in route directly +++++
+Route::view('/home', 'home')->middleware([AgeCheck::class, CountryCheck::class]);
+Route::view('/about', 'about')->middleware(CountryCheck::class);

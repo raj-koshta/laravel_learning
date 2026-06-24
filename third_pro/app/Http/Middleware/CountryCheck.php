@@ -15,8 +15,6 @@ class CountryCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        // Group Middleware
-        // echo "Country check";
         if($request->country != 'india'){
             die('You can not access this website outside to india');
         }

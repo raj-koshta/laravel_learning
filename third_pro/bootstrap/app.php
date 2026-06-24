@@ -17,14 +17,14 @@ return Application::configure(basePath: dirname(__DIR__))
         // $middleware->append(AgeCheck::class);
         
         // Group Middleware
-        $middleware->appendToGroup('check1', [
-            AgeCheck::class,
-            CountryCheck::class,
-        ]);
-        $middleware->appendToGroup('check2', [
-            AgeCheck::class,
-            CountryCheck::class,
-        ]);
+        // $middleware->appendToGroup('check1', [
+        //     AgeCheck::class,
+        //     CountryCheck::class,
+        // ]);
+        // $middleware->appendToGroup('check2', [
+        //     AgeCheck::class,
+        //     CountryCheck::class,
+        // ]);
 
     })
     ->withExceptions(function (Exceptions $exceptions) {

@@ -15,13 +15,6 @@ class AgeCheck
      */
     public function handle(Request $request, Closure $next): Response
     {
-        //  Global Middleware
-        // if($request->age < 18){
-        //     die('You can not visit this site');
-        // }
-
-        //  Group Middleware
-        // echo "Age check";
         if($request->age < 18){
             die('You can not visit this site');
         }

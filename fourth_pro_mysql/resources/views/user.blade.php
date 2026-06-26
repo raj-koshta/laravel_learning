@@ -42,7 +42,34 @@
     </li>
 </ul> --}}
 
-{{-- -------------------------- Query Builders ---------------- --}}
+{{-- --------------------------Database Query Builders ---------------- --}}
+{{-- <h1>Users List</h1>
+
+<table border="1">
+    <thead>
+        <tr>
+            <th>SN.</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Password</th>
+        </tr>
+    </thead>
+    <tbody>
+        <?php $sn = 1 ?>
+        @foreach ($users as $user)
+        <tr>
+            <td>{{ $sn++ }}</td>
+            <td>{{ $user->name }}</td>
+            <td>{{ $user->email }}</td>
+            <td>{{ $user->phone }}</td>
+            <td>{{ $user->password }}</td>
+        </tr>
+        @endforeach
+    </tbody>
+</table> --}}
+
+{{-- --------------------------Eloquent Model : Query Builders ---------------- --}}
 <h1>Users List</h1>
 
 <table border="1">

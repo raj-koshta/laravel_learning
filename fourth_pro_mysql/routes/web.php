@@ -14,5 +14,8 @@ Route::get('students', [StudentController::class, 'getStudents']);
 //  Http Client - 30
 Route::get('users', [UserController::class, 'getApiUsers']);
 
-// Query Bilders
+// Database Query Bilders
 Route::get('users',[UserController::class, 'queries']);
+
+// Database Query Bilders
+Route::get('users-eq',[UserController::class, 'eloquentQuery']);

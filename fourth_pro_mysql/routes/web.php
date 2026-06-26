@@ -10,4 +10,9 @@ Route::get('/', function () {
 
 // Route::get('users', [UserController::class, 'users']);
 Route::get('students', [StudentController::class, 'getStudents']);
+
+//  Http Client - 30
 Route::get('users', [UserController::class, 'getApiUsers']);
+
+// Query Bilders
+Route::get('users',[UserController::class, 'queries']);

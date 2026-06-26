@@ -1,4 +1,4 @@
-<div>
+{{-- <div>
     {{ print_r($users) }}
 </div>
 
@@ -21,4 +21,23 @@
         </tr>
         @endforeach
     </tbody>
-</table>
+</table> --}}
+
+{{-- ---------------- API Reponse ---------------- --}}
+<h1>Users Data</h1>
+{{ print_r($data) }}
+
+<ul>
+    <li>
+        Name: <b>{{ $data->name }}</b>
+    </li>
+    <li>
+        Email: <b>{{ $data->email }}</b>
+    </li>
+    <li>
+        Street: <b>{{ $data->address->street }}</b>
+    </li>
+    <li>
+        City: <b>{{ $data->address->city }}</b>
+    </li>
+</ul>

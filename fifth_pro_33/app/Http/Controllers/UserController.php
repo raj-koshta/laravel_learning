@@ -46,6 +46,17 @@ class UserController extends Controller
         echo "Check Request method  :-". $request->isMethod('post').'<br /><hr />';
         echo "Check Route Path  :-". $request->is('user').'<br /><hr />';
         echo "Check IP  :-". $request->ip().'<br /><hr />';
-        
+    }
+
+    public function login(Request $request){
+        // return $request;
+
+        $request->session()->put('user', $request->name);
+        return redirect('profile');
+    }
+
+    public function logout(){
+        session()->pull('user');
+        return redirect('login');
     }
 }

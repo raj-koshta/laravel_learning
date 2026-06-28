@@ -13,7 +13,7 @@ Route::get('/', function () {
 // Route::patch('user', [UserController::class, 'patch']);
 // Route::delete('user', [UserController::class, 'delete']);
 
-Route::view('form', [UserController::class, 'user']);
+// Route::view('form', [UserController::class, 'user']);
 
 // ------------- Any Method ---------------
 // Route::any('user',[UserController::class, 'any']);
@@ -23,4 +23,10 @@ Route::view('form', [UserController::class, 'user']);
 // Route::match(['put', 'delete'],'user',[UserController::class, 'group2']);
 
 // -------------- Request class ------------------
-Route::post('user', [UserController::class, 'requestAnalysis']);
+// Route::post('user', [UserController::class, 'requestAnalysis']);
+
+// ----------------- Session -------------------
+Route::view('login','login');
+Route::post('login',[ UserController::class,'login']);
+Route::view('profile','profile');
+Route::get('logout',[ UserController::class,'logout']);

@@ -21,4 +21,13 @@ class UserController extends Controller
     public function delete(Request $request){
         return "Delete Route MEthod";
     }
+    public function any(Request $request){
+        return "Any Method : " . $request->_method;
+    }
+    public function group1(Request $request){
+        return "Match Method : Group 1 Method :- controller method : " . $request->_method;
+    }
+    public function group2(Request $request){
+        return "Match Method : Group 2 Method :- controller method : " . $request->_method;
+    }
 }

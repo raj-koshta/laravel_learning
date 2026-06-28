@@ -26,7 +26,11 @@ Route::get('/', function () {
 // Route::post('user', [UserController::class, 'requestAnalysis']);
 
 // ----------------- Session -------------------
-Route::view('login','login');
-Route::post('login',[ UserController::class,'login']);
-Route::view('profile','profile');
-Route::get('logout',[ UserController::class,'logout']);
+// Route::view('login','login');
+// Route::post('login',[ UserController::class,'login']);
+// Route::view('profile','profile');
+// Route::get('logout',[ UserController::class,'logout']);
+
+// --------------- Flash Session --------
+Route::post('add-user',[UserController::class, 'addUser']);
+Route::view('add-user','add-user');

@@ -32,5 +32,9 @@ Route::get('/', function () {
 // Route::get('logout',[ UserController::class,'logout']);
 
 // --------------- Flash Session --------
-Route::post('add-user',[UserController::class, 'addUser']);
-Route::view('add-user','add-user');
+// Route::post('add-user',[UserController::class, 'addUser']);
+// Route::view('add-user','add-user');
+
+// ------------------ Upload File -------------------
+Route::view('upload','upload');
+Route::post('upload',[UserController::class, 'upload']);

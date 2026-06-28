@@ -66,4 +66,16 @@ class UserController extends Controller
         $request->session()->flash('name', $request->name);
         return redirect('add-user');
     }
+
+    public function upload(Request $request){
+        // echo "Uplaod call <br />";
+
+        // $path = $request->file('file')->store('public');
+        $path = $request->file('file')->storeAs('public','Dummy.jpg');
+        $fileName = explode('/', $path);
+        $fileName = $fileName[1];
+        echo $path;
+        echo "<br />";
+        echo $fileName;
+    }
 }

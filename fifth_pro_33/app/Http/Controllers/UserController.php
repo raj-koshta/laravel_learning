@@ -59,4 +59,11 @@ class UserController extends Controller
         session()->pull('user');
         return redirect('login');
     }
+
+    public function addUser(Request $request){
+        // Our Db code to save data in db
+        $request->session()->flash('success', 'User Added Successfully');
+        $request->session()->flash('name', $request->name);
+        return redirect('add-user');
+    }
 }

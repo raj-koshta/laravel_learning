@@ -30,4 +30,22 @@ class UserController extends Controller
     public function group2(Request $request){
         return "Match Method : Group 2 Method :- controller method : " . $request->_method;
     }
+
+    public function requestAnalysis(Request $request){
+        echo "Request Method :-". $request->method().'<br /><hr /> <hr />';
+        echo "Request path :-". $request->path().'<br /><hr />';
+        echo "Request URL :-". $request->url().'<br /><hr />';
+        echo "Request Input Name with input funtion:-". $request->input('name').'<br /><hr />';
+        echo "Request Input Name with direct name access :-". $request->name.'<br /><hr />';
+        echo "Request All Input Access with input function :-".'<br /><hr />';
+        print_r($request->input());
+        echo "<br /><hr />";
+        echo "Request All Input Access with Collect function :-".'<br /><hr />';
+        print_r($request->collect());
+        echo "<br /><hr />";
+        echo "Check Request method  :-". $request->isMethod('post').'<br /><hr />';
+        echo "Check Route Path  :-". $request->is('user').'<br /><hr />';
+        echo "Check IP  :-". $request->ip().'<br /><hr />';
+        
+    }
 }

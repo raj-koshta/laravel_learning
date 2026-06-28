@@ -48,7 +48,7 @@
     <h1>User Form</h1>
     <form action="/user" method="post">
         @csrf
-        <input type="hidden" name="_method" value="delete">
+        {{-- <input type="hidden" name="_method" value="delete"> --}}
         <label for="name">Name:</label>
         <input type="text" name="name" id="name">
         <br>

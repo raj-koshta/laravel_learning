@@ -19,5 +19,8 @@ Route::view('form', [UserController::class, 'user']);
 // Route::any('user',[UserController::class, 'any']);
 
 // ------------- Match Method ---------------
-Route::match(['post', 'get'],'user',[UserController::class, 'group1']);
-Route::match(['put', 'delete'],'user',[UserController::class, 'group2']);
+// Route::match(['post', 'get'],'user',[UserController::class, 'group1']);
+// Route::match(['put', 'delete'],'user',[UserController::class, 'group2']);
+
+// -------------- Request class ------------------
+Route::post('user', [UserController::class, 'requestAnalysis']);

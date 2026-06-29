@@ -36,6 +36,14 @@ Route::get('/', function () {
 // Route::view('add-user','add-user');
 
 // ------------------ Upload File -------------------
-Route::view('upload','upload');
-Route::post('upload',[UserController::class, 'upload']);
-Route::view('display','upload-display');
+// Route::view('upload','upload');
+// Route::post('upload',[UserController::class, 'upload']);
+// Route::view('display','upload-display');
+
+// ------------- Localization -----------
+Route::view('home','home');
+Route::view('about','about'); // For normal page load with global given languag
+Route::get('about/{lang}', function($lang){
+    App::setLocale($lang);
+    return view('about');
+});

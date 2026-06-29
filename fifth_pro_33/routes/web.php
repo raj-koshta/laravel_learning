@@ -38,3 +38,4 @@ Route::get('/', function () {
 // ------------------ Upload File -------------------
 Route::view('upload','upload');
 Route::post('upload',[UserController::class, 'upload']);
+Route::view('display','upload-display');

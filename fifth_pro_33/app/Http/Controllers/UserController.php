@@ -71,7 +71,7 @@ class UserController extends Controller
         // echo "Uplaod call <br />";
 
         // $path = $request->file('file')->store('public');
-        $path = $request->file('file')->storeAs('public','Dummy.jpg');
+        $path = $request->file('file')->storeAs('public','Dummy2.jpg','public');
         $fileName = explode('/', $path);
         $fileName = $fileName[1];
         echo $path;

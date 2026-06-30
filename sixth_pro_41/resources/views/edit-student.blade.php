@@ -1,7 +1,8 @@
 <div>
     <h1>Update Student Data</h1>
-    <form action="" method="POST">
+    <form action="/update-student/{{ $student->id }}" method="POST">
         @csrf
+        <input type="hidden" name="_method" value="put">
         <input type="text" name="name" id="name" value="{{ $student->name }}" placeholder="Name">
         <br>
         <br>

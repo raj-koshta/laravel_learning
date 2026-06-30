@@ -47,3 +47,21 @@ Route::get('about/{lang}', function($lang){
     App::setLocale($lang);
     return view('about');
 });
+// -----------------------Pass params in localization -------------
+Route::get('setlang/{lang}', function($lang){
+    Session::put('lang', $lang);
+    return redirect('/home');
+});
+
+Route::middleware('SetLang')->group(function(){
+    Route::view('home','home');
+    Route::get('about/{lang}', function($lang){
+        App::setLocale($lang);
+        return view('about');
+    });
+
+    Route::get('setlang/{lang}', function($lang){
+        Session::put('lang', $lang);
+        return redirect('/home');
+    });
+});

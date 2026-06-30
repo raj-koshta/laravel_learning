@@ -1,0 +1,23 @@
+<?php
+
+namespace App\Http\Controllers;
+
+use App\Models\Student;
+use Illuminate\Http\Request;
+
+class StudentController extends Controller
+{
+    public function addStudent(Request $request){
+        $student = new Student();
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->batch = $request->batch;
+
+        $res = $student->save();
+        if($res){
+            echo "Saved";
+        } else {
+            echo "Not saved";
+        }
+    }
+}

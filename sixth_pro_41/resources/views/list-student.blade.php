@@ -1,3 +1,19 @@
 <div>
-    <!-- It always seems impossible until it is done. - Nelson Mandela -->
+    <h1>Student List</h1>
+    <table border="2">
+        <tr>
+            <td>Name</td>
+            <td>Email</td>
+            <td>Batch</td>
+            <td>Created</td>
+        </tr>
+        @foreach ($students as $stu)
+        <tr>
+            <td>{{ $stu->name }}</td>
+            <td>{{ $stu->email }}</td>
+            <td>{{ $stu->batch }}</td>
+            <td>{{ $stu->created_at }}</td>
+        </tr>
+        @endforeach
+    </table>
 </div>

@@ -1,4 +1,5 @@
 <div>
+    <h1>Add Student</h1>
     <form action="add-student" method="POST">
         @csrf
         <input type="text" name="name" id="name" placeholder="Name">

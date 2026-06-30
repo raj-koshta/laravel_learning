@@ -35,4 +35,18 @@ class StudentController extends Controller
         $student = Student::find($id);
         return view('edit-student', ['student' => $student]);
     }
+
+    public function updateStudent(Request $request, $id){
+        $student = Student::find($id);
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->batch = $request->batch;
+
+        if($student->save()){
+            return redirect('list-student');
+        } else {
+            return "Update fail";
+        }
+
+    }
 }

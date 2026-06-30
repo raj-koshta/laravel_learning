@@ -6,6 +6,7 @@
             <td>Email</td>
             <td>Batch</td>
             <td>Created</td>
+            <td>Operation</td>
         </tr>
         @foreach ($students as $stu)
         <tr>
@@ -13,6 +14,7 @@
             <td>{{ $stu->email }}</td>
             <td>{{ $stu->batch }}</td>
             <td>{{ $stu->created_at }}</td>
+            <td><a href="delete-student/{{ $stu->id }}">Delete</a></td>
         </tr>
         @endforeach
     </table>

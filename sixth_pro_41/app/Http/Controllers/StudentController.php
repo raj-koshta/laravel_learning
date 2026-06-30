@@ -20,4 +20,9 @@ class StudentController extends Controller
             echo "Not saved";
         }
     }
+
+    public function listStudent(){
+        $students = Student::all();
+        return view('list-student',['students' => $students]);
+    }
 }

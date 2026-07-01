@@ -22,7 +22,7 @@ class StudentController extends Controller
     }
 
     public function listStudent(){
-        $students = Student::all();
+        $students = Student::paginate(5);
         return view('list-student',['students' => $students]);
     }
  
@@ -51,7 +51,8 @@ class StudentController extends Controller
     }
 
     public function searchStudent(Request $request){
-        $studentData = Student::where('name','like',"%$request->search%")->get();
+        // $studentData = Student::where('name','like',"%$request->search%")->get(); // 
+        $studentData = Student::where('name','like',"%$request->search%")->paginate(5); // With pagination
         return view('list-student',['students' => $studentData,'search' => $request->search]);
     }
 }

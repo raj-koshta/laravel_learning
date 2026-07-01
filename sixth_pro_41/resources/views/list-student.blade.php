@@ -1,3 +1,8 @@
+<style>
+    .w-5.h-5{
+        width: 20px;
+    }
+</style>
 <div>
     <h1>Student List</h1>
     <hr>
@@ -25,4 +30,5 @@
         </tr>
         @endforeach
     </table>
+    {{ @$students->links() }}
 </div>

@@ -55,4 +55,13 @@ class StudentController extends Controller
         $studentData = Student::where('name','like',"%$request->search%")->paginate(5); // With pagination
         return view('list-student',['students' => $studentData,'search' => $request->search]);
     }
+
+    public function deleteMultipleStudents(Request $request){
+        $check = Student::destroy($request->ids);
+        if($check){
+            return redirect('/list-student');
+        } else {
+            return "Data not deleted";
+        }
+    }
 }

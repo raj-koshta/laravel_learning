@@ -1,5 +1,11 @@
 <div>
     <h1>Student List</h1>
+    <hr>
+    <form action="search-student" method="get">
+        <input type="text" name="search" placeholder="Search Via Name" value="{{ @$search }}">
+        <input type="submit" value="Search">
+    </form>
+    <hr>
     <table border="2">
         <tr>
             <td>Name</td>

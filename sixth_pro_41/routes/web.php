@@ -13,3 +13,4 @@ Route::get('list-student',[StudentController::class,'listStudent']);
 Route::get('delete-student/{id}',[StudentController::class, 'deleteStudent']);
 Route::get('edit-student/{id}',[StudentController::class, 'editStudent']);
 Route::put('update-student/{id}',[StudentController::class, 'updateStudent']);
+Route::get('search-student',[StudentController::class, 'searchStudent']);

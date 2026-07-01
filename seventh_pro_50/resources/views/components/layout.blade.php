@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>{{$title}}</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f4f4f4;
+            color: #333;
+        }
+
+        /* Header */
+        .header {
+            background: #1f2937;
+            padding: 15px 40px;
+        }
+
+        .header ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        .header ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .header ul li a:hover {
+            color: #38bdf8;
+        }
+
+        /* Content */
+        section {
+            max-width: 900px;
+            margin: 40px auto;
+            background: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        section h1 {
+            margin-bottom: 10px;
+        }
+
+        section h3 {
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        section p {
+            line-height: 1.7;
+        }
+
+        /* Footer */
+        .footer {
+            background: #1f2937;
+            color: white;
+            text-align: center;
+            padding: 18px;
+            margin-top: 50px;
+        }
+
+        /* Login Section */
+        .login-section {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 75vh;
+            background: #f4f4f4;
+        }
+
+        .login-box {
+            width: 400px;
+            background: #fff;
+            padding: 35px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+
+        .login-box h2 {
+            text-align: center;
+            margin-bottom: 10px;
+            color: #1f2937;
+        }
+
+        .login-box p {
+            text-align: center;
+            color: #666;
+            margin-bottom: 25px;
+        }
+
+        .form-group {
+            margin-bottom: 18px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: bold;
+        }
+
+        .form-group input[type="email"],
+        .form-group input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 6px;
+            font-size: 15px;
+            outline: none;
+        }
+
+        .form-group input:focus {
+            border-color: #2563eb;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .remember label {
+            margin: 0;
+            font-weight: normal;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            color: #fff;
+            border: none;
+            border-radius: 6px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        button:hover {
+            background: #1d4ed8;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <ul>
+            <li><a href="">Home</a></li>
+            <li><a href="">About</a></li>
+            <li><a href="">Login</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+    </div>
+    {{ $main }}
+    <div class="footer">
+        <p>All Right Reserved - Footer</p>
+    </div>
+</body>
+
+</html>

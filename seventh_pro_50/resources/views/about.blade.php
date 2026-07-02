@@ -2,7 +2,7 @@
     <x-slot name="title">About Page</x-slot>
     <x-slot name="main">
         <section>
-            <h1>About Page Heading</h1>
+            <h1 class="heading" onclick="changeColor()" id="heading">About Page Heading</h1>
             <h3>Sub Heading for About page</h3>
             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt similique quaerat totam facere sapiente
                 odit consequuntur dolores unde voluptatum illo?

@@ -20,7 +20,7 @@
     </div>
     {{-- @yield('main') --}}
     @section('main')
-    @show
+    @show   
     <div class="footer">
         <p>All Right Reserved - Footer</p>
     </div>

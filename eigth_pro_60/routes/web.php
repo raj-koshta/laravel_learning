@@ -11,3 +11,5 @@ Route::get('/', function () {
 Route::get('list', [SellerController::class, 'list']);
 // ------ One-to-Many --
 Route::get('many-rel', [SellerController::class, 'manyRel']);
+// ------ Many-to-One --
+Route::get('many-to-one', [SellerController::class, 'manyToOne']);

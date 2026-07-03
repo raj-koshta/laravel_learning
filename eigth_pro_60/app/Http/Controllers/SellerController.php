@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Seller;
+use App\Models\Product;
 
 class SellerController extends Controller
 {
@@ -14,5 +15,11 @@ class SellerController extends Controller
     public function manyRel(){
         $seller = Seller::find(1)->productMany;
         return $seller;
+    }
+
+    public function manyToOne(){
+        // $product = Product::all();
+        $product = Product::with('seller')->get();
+        return $product;
     }
 }

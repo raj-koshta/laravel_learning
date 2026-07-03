@@ -13,4 +13,12 @@ class Student extends Model
     function getEmailAttribute($val){
         return ucfirst($val);
     }
+
+    function setNameAttribute($value){
+        $this->attributes['name'] = ucfirst("banana");
+    }
+
+    function setEmailAttribute($value){
+        $this->attributes['email'] = strtolower("JONAH@GMAIL.co");
+    }
 }

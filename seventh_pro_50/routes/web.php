@@ -15,3 +15,4 @@ Route::view('home2','home2');
 Route::view('login2','login2');
 
 Route::get('list',[StudentController::class, 'list']);
+Route::get('save',[StudentController::class, 'save']);

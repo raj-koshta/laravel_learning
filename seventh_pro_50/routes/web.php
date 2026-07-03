@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -12,3 +13,5 @@ Route::view('login','login');
 Route::view('admin','admin');
 Route::view('home2','home2');
 Route::view('login2','login2');
+
+Route::get('list',[StudentController::class, 'list']);

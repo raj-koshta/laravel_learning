@@ -11,4 +11,8 @@ class SellerController extends Controller
         $seller = Seller::find(1)->productData;
         return $seller;
     }
+    public function manyRel(){
+        $seller = Seller::find(1)->productMany;
+        return $seller;
+    }
 }

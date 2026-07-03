@@ -7,4 +7,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+// ------ One-to-One --
 Route::get('list', [SellerController::class, 'list']);
+// ------ One-to-Many --
+Route::get('many-rel', [SellerController::class, 'manyRel']);

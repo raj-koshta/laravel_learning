@@ -16,4 +16,5 @@ Route::get('many-rel', [SellerController::class, 'manyRel']);
 Route::get('many-to-one', [SellerController::class, 'manyToOne']);
 
 // ------------ Email Sending ----------------
-Route::get('send-email', [MailController::class,'sendEmail']);
+Route::post('send-email', [MailController::class,'sendEmail']);
+Route::view('send-email','send-email');

@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\FluentStringController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\SellerController;
 use Illuminate\Support\Facades\Route;
@@ -18,3 +19,6 @@ Route::get('many-to-one', [SellerController::class, 'manyToOne']);
 // ------------ Email Sending ----------------
 Route::post('send-email', [MailController::class,'sendEmail']);
 Route::view('send-email','send-email');
+
+// ------------ Fluent String ----------------
+Route::get('fluent-string', [FluentStringController::class,'string']);

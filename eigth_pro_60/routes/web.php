@@ -4,6 +4,7 @@ use App\Http\Controllers\FluentStringController;
 use App\Http\Controllers\MailController;
 use App\Http\Controllers\SellerController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DeviceController;
 
 Route::get('/', function () {
     return view('welcome');
@@ -22,3 +23,6 @@ Route::view('send-email','send-email');
 
 // ------------ Fluent String ----------------
 Route::get('fluent-string', [FluentStringController::class,'string']);
+
+// ------------------ Route Model Binding ------------
+Route::get('device/{key:name}', [DeviceController::class, 'index']);

@@ -14,13 +14,24 @@ Route::get('test', function(){
     return['name'=> "Raj Koshta",'do' => "Learning API in laravel"];
 });
 
-Route::get('list',[StudentController::class, 'list']);
-Route::post('add-student',[StudentController::class, 'addStudent']);
-Route::put('update-student',[StudentController::class, 'updateStudent']);
-Route::delete('delete-student/{id}',[StudentController::class, 'deleteStudent']);
+// Route::get('list',[StudentController::class, 'list']);
+// Route::post('add-student',[StudentController::class, 'addStudent']);
+// Route::put('update-student',[StudentController::class, 'updateStudent']);
+// Route::delete('delete-student/{id}',[StudentController::class, 'deleteStudent']);
 
 // ------------ Resource Route ----------
 Route::resource('member', MemberController::class);
 
-// ------------------- Authentication -----------
+// ------------------- Sanctum Token generation -----------
 Route::post('signup',[UserAuthController::class, 'signup']);
+Route::post('login',[UserAuthController::class, 'login']);
+
+// ---------------- API Authentication -------------
+Route::group(['middleware' => 'auth:sanctum'], function(){
+    Route::get('list',[StudentController::class, 'list']);
+    Route::post('add-student',[StudentController::class, 'addStudent']);
+    Route::put('update-student',[StudentController::class, 'updateStudent']);
+    Route::delete('delete-student/{id}',[StudentController::class, 'deleteStudent']);
+});
+
+Route::get('login',[UserAuthController::class, 'login'])->name('login');

@@ -11,6 +11,31 @@ class StudentController extends Controller
         return Student::all();
     }
     public function addStudent(Request $request){
-        return $request->input();
+        $student = new Student();
+
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->batch = $request->batch;
+
+        if($student->save()){
+            return ['message' => "Student data saved"];
+        } else {
+            return ['message' => "Unable to save data"];
+        }
+    }
+
+    public function updateStudent(Request $request){
+        // return "Update student";
+        $student = Student::find($request->id);
+      
+        $student->name = $request->name;
+        $student->email = $request->email;
+        $student->batch = $request->batch;
+        
+        if($student->save()){
+            return ['message' => "Student Updated"];
+        } else {
+            return ['message' => "Unable to Update student"];
+        }
     }
 }

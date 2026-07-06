@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Student;
+use Illuminate\Support\Facades\Validator;
 
 class StudentController extends Controller
 {
@@ -11,6 +12,18 @@ class StudentController extends Controller
         return Student::all();
     }
     public function addStudent(Request $request){
+        $rules = array(
+            'name' => 'required | min:2 | max:15',
+            'email' => 'required | email',
+            'batch' => 'required'
+        );
+
+        $validation = Validator::make($request->all(), $rules);
+
+        if($validation->fails()){
+            return $validation->errors();
+        }
+
         $student = new Student();
 
         $student->name = $request->name;

@@ -38,4 +38,14 @@ class StudentController extends Controller
             return ['message' => "Unable to Update student"];
         }
     }
+
+
+    public function deleteStudent($id){
+        $student = Student::destroy($id);
+        if($student){
+            return ['message' => "Student Deleted"];
+        } else {
+            return ['message' => "Unable to Delete student"];
+        }
+    }
 }

@@ -28,8 +28,6 @@ class SendWelcomeEmailJob implements ShouldQueue
      */
     public function handle(): void
     {
-        dispatch(function () {
-            Mail::to($this->to)->send(new WelcomeEmail($this->msg, $this->subject));
-        })->delay(now()->addSeconds(5));
+        Mail::to($this->to)->send(new WelcomeEmail($this->msg, $this->subject));
     }
 }
